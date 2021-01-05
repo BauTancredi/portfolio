@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabContainer: {
     marginLeft: "auto",
-    marginRight: "3em",
+    marginRight: "2em",
   },
   tab: {
     ...theme.typography.tab,
@@ -73,25 +73,30 @@ const Header = () => {
             value="0"
           />
         ))}
-        <Button
-          variant="contained"
-          color="secondary"
-          disableElevation
-          className={classes.button}
-        >
-          <Typography
-            variant="body1"
-            style={{
-              fontFamily: "'Montserrat', 'sans-serif'",
-              fontSize: "1rem",
-              color: "#FAF8F0",
-              fontWeight: "400",
-            }}
-          >
-            CONTACT ME
-          </Typography>
-        </Button>
       </Tabs>
+
+      <Button
+        variant="contained"
+        color="secondary"
+        component={Link}
+        href="/"
+        disableElevation
+        className={classes.button}
+        style={{ textDecoration: "none" }}
+      >
+        <Typography
+          variant="body1"
+          style={{
+            fontFamily: "'Montserrat', 'sans-serif'",
+            fontSize: "1rem",
+            color: "#FAF8F0",
+            fontWeight: "400",
+            textDecoration: "none",
+          }}
+        >
+          CONTACT ME
+        </Typography>
+      </Button>
     </Fragment>
   );
 
