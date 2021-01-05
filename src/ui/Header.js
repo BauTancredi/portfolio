@@ -68,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
     opacity: "0.7",
     fontSize: "1rem",
     fontWeight: 400,
+    textTransform: "uppercase",
   },
 }));
 
