@@ -65,7 +65,10 @@ export default function Index() {
               color="secondary"
               className={classes.button}
             >
-              <Typography variant="body1" style={{ color: "#FAF8F0" }}>
+              <Typography
+                variant="body1"
+                style={{ color: theme.palette.common.cream }}
+              >
                 Contact Me
               </Typography>
             </Button>

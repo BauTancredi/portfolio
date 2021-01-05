@@ -7,6 +7,11 @@ const backgroundColor = "#FAF8F0";
 // Create a theme instance.
 const theme = createMuiTheme({
   palette: {
+    common: {
+      blue: primaryColor,
+      red: secondaryColor,
+      cream: backgroundColor,
+    },
     primary: {
       main: primaryColor,
     },
