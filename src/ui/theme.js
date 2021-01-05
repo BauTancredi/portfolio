@@ -18,17 +18,23 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    tab: {
+      fontFamily: "'Montserrat', 'sans-serif'",
+      fontSize: "1rem",
+      color: primaryColor,
+    },
     h1: {
       fontFamily: "'Montserrat', 'sans-serif'",
       fontWeight: "bold",
-      fontSize: "1rem",
+      fontSize: "3.5rem",
       color: primaryColor,
     },
     body1: {
       fontFamily: "'Chivo', 'sans-serif'",
-      fontWeight: "400",
-      fontSize: ".8rem",
+      fontWeight: "300",
+      fontSize: "1.8rem",
       color: primaryColor,
+      textTransform: "none",
     },
     body2: {
       fontFamily: "'Chivo', 'sans-serif'",
