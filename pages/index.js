@@ -1,11 +1,15 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Button, Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography, useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {},
   heroContainer: {
     height: "80em",
+    [theme.breakpoints.down("sm")]: {
+      height: "70em",
+      margin: "1em",
+    },
   },
   buttonsContainer: {
     marginTop: "2em",
@@ -13,12 +17,16 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: "1em",
     borderRadius: "15px",
+    width: "20em",
   },
 }));
 
 export default function Index() {
   const classes = useStyles();
   const theme = useTheme();
+
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Grid container className={classes.mainContainer}>
@@ -31,12 +39,22 @@ export default function Index() {
         className={classes.heroContainer}
       >
         <Grid item>
-          <Typography variant="h1">Front-end Developer</Typography>
+          <Typography
+            variant="h1"
+            style={{ fontSize: matchesSM ? "2.2rem" : undefined }}
+            align="center"
+          >
+            Front-end Developer
+          </Typography>
         </Grid>
         <Grid item>
           <Typography
             variant="body1"
-            style={{ maxWidth: "30em" }}
+            style={{
+              maxWidth: matchesSM ? "25rem" : "30em",
+              fontSize: matchesSM ? "1.5rem" : undefined,
+              marginTop: matchesSM ? "1.5em" : undefined,
+            }}
             align="center"
           >
             Hi, you can call me B. I’m a Front-end Developer with special focus
