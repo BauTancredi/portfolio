@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
   heroContainer: {
     height: "100vh",
     [theme.breakpoints.down("sm")]: {
-      height: "70em",
       margin: "1em",
     },
   },
