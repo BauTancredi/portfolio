@@ -45,11 +45,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   monitor: {
-    width: "250%",
-    height: "250%",
-    [theme.breakpoints.down("lg")]: {
-      width: "200%",
-      height: "200%",
+    width: "70%",
+    height: "70%",
+    [theme.breakpoints.down("md")]: {
+      width: "30%",
+      height: "30%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "40%",
+      height: "40%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "50%",
+      height: "50%",
     },
   },
 }));
@@ -58,6 +66,8 @@ export default function Index() {
   const classes = useStyles();
   const theme = useTheme();
 
+  const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
@@ -183,15 +193,23 @@ export default function Index() {
         item
         container
         style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
+        direction={matchesMD ? "column" : "row"}
       >
-        <Grid item container direction="column" md>
+        <Grid
+          item
+          container
+          direction="column"
+          md
+          alignContent={matchesMD ? "center" : undefined}
+        >
           <Grid item>
             <Typography
               variant="h2"
               style={{
                 fontSize: matchesSM ? "2.2rem" : undefined,
-                marginBottom: "1.5em",
+                marginBottom: matchesMD ? 0 : "1.5em",
               }}
+              align={matchesMD ? "center" : undefined}
             >
               About Me
             </Typography>
@@ -204,6 +222,7 @@ export default function Index() {
                 fontSize: matchesSM ? "1.5rem" : undefined,
                 marginTop: matchesSM ? "1.5em" : undefined,
               }}
+              align={matchesMD ? "center" : undefined}
               paragraph
               gutterBottom
             >
@@ -216,6 +235,7 @@ export default function Index() {
                 maxWidth: matchesXS ? "15em" : "30em",
                 fontSize: matchesSM ? "1.5rem" : undefined,
               }}
+              align={matchesMD ? "center" : undefined}
               paragraph
               gutterBottom
             >
@@ -225,14 +245,19 @@ export default function Index() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item container md justify="center" alignItems="center">
-          <Grid item>
-            <img
-              src="/assets/monitor.svg"
-              alt="monitor"
-              className={classes.monitor}
-            />
-          </Grid>
+        <Grid
+          item
+          container
+          md
+          justify={matchesMD ? "center" : "flex-end"}
+          alignItems={matchesLG ? "center" : "flex-start"}
+          style={{ marginTop: matchesMD ? "2em" : 0 }}
+        >
+          <img
+            src="/assets/monitor.svg"
+            alt="monitor"
+            className={classes.monitor}
+          />
         </Grid>
       </Grid>
     </Grid>
