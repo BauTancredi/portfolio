@@ -34,6 +34,12 @@ const theme = createMuiTheme({
       fontSize: "3.5rem",
       color: primaryColor,
     },
+    h2: {
+      fontFamily: "'Montserrat', 'sans-serif'",
+      fontWeight: "bold",
+      fontSize: "3rem",
+      color: primaryColor,
+    },
     body1: {
       fontFamily: "'Chivo', 'sans-serif'",
       fontWeight: "300",

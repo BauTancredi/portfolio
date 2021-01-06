@@ -5,7 +5,7 @@ import { Button, Grid, Typography, useMediaQuery } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   mainContainer: {},
   heroContainer: {
-    height: "80em",
+    height: "100vh",
     [theme.breakpoints.down("sm")]: {
       height: "70em",
       margin: "1em",
@@ -19,6 +19,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     width: "20em",
   },
+  projectContainer: {
+    width: "30em",
+    height: "20em",
+    backgroundColor: "grey",
+    borderRadius: "15px",
+    marginBottom: "10em",
+  },
 }));
 
 export default function Index() {
@@ -30,6 +37,7 @@ export default function Index() {
 
   return (
     <Grid container className={classes.mainContainer}>
+      {/* Hero */}
       <Grid
         item
         container
@@ -90,6 +98,46 @@ export default function Index() {
                 Contact Me
               </Typography>
             </Button>
+          </Grid>
+        </Grid>
+      </Grid>
+      {/* Recent Work */}
+      <Grid item container direction="column" alignItems="center">
+        <Grid item>
+          <Typography variant="h2" align="center">
+            Recent Works
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography
+            variant="body1"
+            align="center"
+            style={{
+              fontSize: matchesSM ? "1.5rem" : undefined,
+              marginTop: matchesSM ? "1.5em" : undefined,
+            }}
+          >
+            Take a look at some of the projects I’ve recently worked on
+          </Typography>
+        </Grid>
+        <Grid item container style={{ marginTop: "5em", width: "90vw" }}>
+          <Grid item container md={4} justify="center">
+            <div className={classes.projectContainer}></div>
+          </Grid>
+          <Grid item container md={4} justify="center">
+            <div className={classes.projectContainer}></div>
+          </Grid>
+          <Grid item container md={4} justify="center">
+            <div className={classes.projectContainer}></div>
+          </Grid>
+          <Grid item container md={4} justify="center">
+            <div className={classes.projectContainer}></div>
+          </Grid>
+          <Grid item container md={4} justify="center">
+            <div className={classes.projectContainer}></div>
+          </Grid>
+          <Grid item container md={4} justify="center">
+            <div className={classes.projectContainer}></div>
           </Grid>
         </Grid>
       </Grid>
