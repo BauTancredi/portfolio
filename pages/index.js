@@ -25,6 +25,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "grey",
     borderRadius: "15px",
     marginBottom: "10em",
+    transform: "scale(1)",
+    transition: "transform 330ms ease-in-out",
+    "&:hover": {
+      cursor: "pointer",
+      transform: "scale(1.4)",
+      transition: "transform 330ms ease-in-out",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "25em",
+      height: "15em",
+      "&:hover": {
+        transform: "scale(1.2)",
+        transition: "transform 330ms ease-in-out",
+      },
+    },
   },
 }));
 
@@ -59,7 +74,7 @@ export default function Index() {
           <Typography
             variant="body1"
             style={{
-              maxWidth: matchesSM ? "25rem" : "30em",
+              maxWidth: matchesXS ? "15em" : "30em",
               fontSize: matchesSM ? "1.5rem" : undefined,
               marginTop: matchesSM ? "1.5em" : undefined,
             }}
@@ -104,7 +119,11 @@ export default function Index() {
       {/* Recent Work */}
       <Grid item container direction="column" alignItems="center">
         <Grid item>
-          <Typography variant="h2" align="center">
+          <Typography
+            variant="h2"
+            align="center"
+            style={{ fontSize: matchesSM ? "2.2rem" : undefined }}
+          >
             Recent Works
           </Typography>
         </Grid>
@@ -113,6 +132,7 @@ export default function Index() {
             variant="body1"
             align="center"
             style={{
+              maxWidth: matchesXS ? "15em" : "30em",
               fontSize: matchesSM ? "1.5rem" : undefined,
               marginTop: matchesSM ? "1.5em" : undefined,
             }}
@@ -121,22 +141,22 @@ export default function Index() {
           </Typography>
         </Grid>
         <Grid item container style={{ marginTop: "5em", width: "90vw" }}>
-          <Grid item container md={4} justify="center">
+          <Grid item container sm={6} md={4} justify="center">
             <div className={classes.projectContainer}></div>
           </Grid>
-          <Grid item container md={4} justify="center">
+          <Grid item container sm={6} md={4} justify="center">
             <div className={classes.projectContainer}></div>
           </Grid>
-          <Grid item container md={4} justify="center">
+          <Grid item container sm={6} md={4} justify="center">
             <div className={classes.projectContainer}></div>
           </Grid>
-          <Grid item container md={4} justify="center">
+          <Grid item container sm={6} md={4} justify="center">
             <div className={classes.projectContainer}></div>
           </Grid>
-          <Grid item container md={4} justify="center">
+          <Grid item container sm={6} md={4} justify="center">
             <div className={classes.projectContainer}></div>
           </Grid>
-          <Grid item container md={4} justify="center">
+          <Grid item container sm={6} md={4} justify="center">
             <div className={classes.projectContainer}></div>
           </Grid>
         </Grid>
