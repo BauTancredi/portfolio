@@ -73,7 +73,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
     // border: "1px solid red",
   },
-  formButton: { margin: "1em", borderRadius: "15px", width: "15em" },
+  formButton: {
+    margin: "1em",
+    borderRadius: "15px",
+    width: "18em",
+    marginTop: "3em",
+  },
 }));
 
 export default function Index() {
@@ -335,7 +340,7 @@ export default function Index() {
                     variant="body1"
                     style={{ color: theme.palette.common.cream }}
                   >
-                    Send!
+                    Send message!
                   </Typography>
                 </Button>
               </Grid>
@@ -505,7 +510,7 @@ export default function Index() {
                     variant="body1"
                     style={{ color: theme.palette.common.cream }}
                   >
-                    Send!
+                    Send message!
                   </Typography>
                 </Button>
               </Grid>
@@ -513,6 +518,39 @@ export default function Index() {
           </Grid>
         </Grid>
       </Hidden>
+      {/* Footer */}
+      <Grid
+        item
+        container
+        direction="column"
+        alignItems="center"
+        style={{ marginTop: "10em" }}
+      >
+        <Grid item>
+          <Typography
+            variant="body1"
+            style={{
+              fontSize: matchesSM ? "1.5rem" : undefined,
+            }}
+            align="center"
+            paragraph
+            gutterBottom
+          >
+            Designed By Bautista Tancredi
+          </Typography>
+          <Typography
+            variant="body1"
+            style={{
+              fontSize: matchesSM ? "1.5rem" : undefined,
+            }}
+            align="center"
+            paragraph
+            gutterBottom
+          >
+            Copyright 2021 &#169;
+          </Typography>
+        </Grid>
+      </Grid>
     </Grid>
   );
 }
