@@ -54,6 +54,13 @@ const theme = createMuiTheme({
       color: primaryColor,
     },
   },
+  overrides: {
+    MuiInputBase: {
+      input: {
+        color: primaryColor,
+      },
+    },
+  },
 });
 
 export default theme;
