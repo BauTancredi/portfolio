@@ -171,6 +171,28 @@ const Header = () => {
               </ListItemText>
             </ListItem>
           ))}
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+            }}
+            divider
+            button
+            component={Link}
+            href="/"
+            // href={route.link}
+            className={classes.listItem}
+            style={{
+              backgroundColor: theme.palette.common.red,
+            }}
+          >
+            <ListItemText
+              disableTypography
+              className={classes.drawerItem}
+              style={{ color: theme.palette.common.cream }}
+            >
+              CONTACT ME
+            </ListItemText>
+          </ListItem>
         </List>
       </SwipeableDrawer>
       <IconButton
