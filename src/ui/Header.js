@@ -20,6 +20,16 @@ import Link from "../Link";
 import { Link as ReactLink } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
+  toolbarMargin: {
+    ...theme.mixins.toolbar,
+    marginBottom: "3em",
+    [theme.breakpoints.down("md")]: {
+      marginBottom: "2em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "1.25em",
+    },
+  },
   appbar: {
     backgroundColor: theme.palette.common.cream,
     padding: "1em",

@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
       margin: "1em",
     },
   },
+  aboutContainer: {
+    width: "90vw",
+  },
   buttonsContainer: {
     marginTop: "2em",
   },
@@ -71,11 +74,12 @@ const useStyles = makeStyles((theme) => ({
       height: "50%",
     },
   },
-  form: {},
+  form: {
+    marginTop: "3em",
+  },
   textInput: {
     marginTop: "3em",
     backgroundColor: "white",
-    // border: "1px solid red",
   },
   formButton: {
     margin: "1em",
@@ -243,14 +247,18 @@ export default function Index() {
         container
         direction="column"
         alignItems="center"
-        style={{ width: "90vw" }}
+        justify="center"
+        className={classes.aboutContainer}
         id="works"
       >
         <Grid item>
           <Typography
             variant="h2"
             align="center"
-            style={{ fontSize: matchesSM ? "2.2rem" : undefined }}
+            style={{
+              fontSize: matchesSM ? "2.2rem" : undefined,
+              marginTop: "3em",
+            }}
           >
             Recent Works
           </Typography>
@@ -293,7 +301,11 @@ export default function Index() {
       <Grid
         item
         container
-        style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
+        style={{
+          width: "90vw",
+          margin: "auto",
+          marginTop: matchesSM ? "8em" : "5em",
+        }}
         direction={matchesMD ? "column" : "row"}
         id="about"
       >
@@ -310,6 +322,7 @@ export default function Index() {
               style={{
                 fontSize: matchesSM ? "2.2rem" : undefined,
                 marginBottom: matchesMD ? "1em" : "1.5em",
+                marginTop: "2em",
               }}
               align={matchesMD ? "center" : undefined}
             >
@@ -352,7 +365,7 @@ export default function Index() {
           md
           justify={matchesMD ? "center" : "flex-end"}
           alignItems={matchesLG ? "center" : "flex-start"}
-          style={{ marginTop: matchesMD ? "2em" : 0 }}
+          style={{ marginTop: matchesMD ? "2em" : "3em" }}
         >
           <img
             src="/assets/monitor.svg"
@@ -460,6 +473,7 @@ export default function Index() {
                 style={{
                   fontSize: matchesSM ? "2.2rem" : undefined,
                   marginBottom: matchesMD ? 0 : "1.5em",
+                  marginTop: "1em",
                 }}
                 align={matchesMD ? "center" : "right"}
               >
@@ -520,6 +534,7 @@ export default function Index() {
                 style={{
                   fontSize: matchesSM ? "2.2rem" : undefined,
                   marginBottom: "1em",
+                  marginTop: "3em",
                 }}
                 align="center"
               >
