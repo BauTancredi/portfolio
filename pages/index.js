@@ -11,6 +11,7 @@ import {
   CircularProgress,
   Snackbar,
 } from "@material-ui/core";
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -175,6 +176,7 @@ export default function Index() {
         alignItems="center"
         justify="center"
         className={classes.heroContainer}
+        id="landing"
       >
         <Grid item>
           <Typography
@@ -211,7 +213,9 @@ export default function Index() {
               color="secondary"
               className={classes.button}
             >
-              <Typography variant="body1">Recent Works</Typography>
+              <Link to="works" spy={true} smooth={true}>
+                <Typography variant="body1">Recent Works</Typography>
+              </Link>
             </Button>
           </Grid>
           <Grid item>
@@ -221,12 +225,14 @@ export default function Index() {
               color="secondary"
               className={classes.button}
             >
-              <Typography
-                variant="body1"
-                style={{ color: theme.palette.common.cream }}
-              >
-                Contact Me
-              </Typography>
+              <Link to="contact" spy={true} smooth={true}>
+                <Typography
+                  variant="body1"
+                  style={{ color: theme.palette.common.cream }}
+                >
+                  Contact Me
+                </Typography>
+              </Link>
             </Button>
           </Grid>
         </Grid>
@@ -238,6 +244,7 @@ export default function Index() {
         direction="column"
         alignItems="center"
         style={{ width: "90vw" }}
+        id="works"
       >
         <Grid item>
           <Typography
@@ -288,6 +295,7 @@ export default function Index() {
         container
         style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
         direction={matchesMD ? "column" : "row"}
+        id="about"
       >
         <Grid
           item
@@ -360,6 +368,7 @@ export default function Index() {
           container
           style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
           direction={matchesMD ? "column" : "row"}
+          id="contact"
         >
           <Grid item container md className={classes.form}>
             <form style={{ width: "100%" }}>
@@ -495,6 +504,7 @@ export default function Index() {
           container
           style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
           direction="column"
+          id="contact"
         >
           <Grid
             item

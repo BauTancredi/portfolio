@@ -17,6 +17,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import Link from "../Link";
+import { Link as ReactLink } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -93,9 +94,9 @@ const Header = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const tabsOptions = [
-    { name: "Github" },
-    { name: "Recent Works" },
-    { name: "About Me" },
+    { name: "Github", id: "aa" },
+    { name: "Recent Works", id: "works" },
+    { name: "About Me", id: "about" },
   ];
 
   const tabs = (
@@ -114,24 +115,24 @@ const Header = () => {
       <Button
         variant="contained"
         color="secondary"
-        component={Link}
-        href="/"
         disableElevation
         className={classes.button}
         style={{ textDecoration: "none" }}
       >
-        <Typography
-          variant="body1"
-          style={{
-            fontFamily: "'Montserrat', 'sans-serif'",
-            fontSize: "1rem",
-            color: "#FAF8F0",
-            fontWeight: "400",
-            textDecoration: "none",
-          }}
-        >
-          CONTACT ME
-        </Typography>
+        <ReactLink to="contact" spy={true} smooth={true}>
+          <Typography
+            variant="body1"
+            style={{
+              fontFamily: "'Montserrat', 'sans-serif'",
+              fontSize: "1rem",
+              color: "#FAF8F0",
+              fontWeight: "400",
+              textDecoration: "none",
+            }}
+          >
+            CONTACT ME
+          </Typography>
+        </ReactLink>
       </Button>
     </Fragment>
   );
@@ -148,9 +149,11 @@ const Header = () => {
         style={{ zIndex: 1402 }}
       >
         <Button className={classes.drawerLogoContainer} disableRipple>
-          <Typography variant="h1" className={classes.drawerLogo}>
-            {"<B />"}
-          </Typography>
+          <ReactLink to="landing" spy={true} smooth={true}>
+            <Typography variant="h1" className={classes.drawerLogo}>
+              {"<B />"}
+            </Typography>
+          </ReactLink>
         </Button>
         <List disablePadding>
           {tabsOptions.map((route, index) => (
@@ -177,9 +180,6 @@ const Header = () => {
             }}
             divider
             button
-            component={Link}
-            href="/"
-            // href={route.link}
             className={classes.listItem}
             style={{
               backgroundColor: theme.palette.common.red,
@@ -190,7 +190,9 @@ const Header = () => {
               className={classes.drawerItem}
               style={{ color: theme.palette.common.cream }}
             >
-              CONTACT ME
+              <ReactLink to="contact" spy={true} smooth={true}>
+                CONTACT ME
+              </ReactLink>
             </ListItemText>
           </ListItem>
         </List>
@@ -211,9 +213,11 @@ const Header = () => {
         <AppBar className={classes.appbar}>
           <Toolbar disableGutters>
             <Button className={classes.logoContainer} disableRipple>
-              <Typography variant="h1" className={classes.logo}>
-                {"<B />"}
-              </Typography>
+              <ReactLink to="landing" spy={true} smooth={true}>
+                <Typography variant="h1" className={classes.logo}>
+                  {"<B />"}
+                </Typography>
+              </ReactLink>
             </Button>
             <Hidden smDown>{tabs}</Hidden>
             <Hidden mdUp>{drawer}</Hidden>
