@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   form: {
-    marginTop: "3em",
+    marginTop: "10em",
   },
   textInput: {
     marginTop: "3em",
@@ -473,7 +473,7 @@ export default function Index() {
                 style={{
                   fontSize: matchesSM ? "2.2rem" : undefined,
                   marginBottom: matchesMD ? 0 : "1.5em",
-                  marginTop: "1em",
+                  marginTop: "2em",
                 }}
                 align={matchesMD ? "center" : "right"}
               >
