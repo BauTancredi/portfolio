@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import axios from "axios";
 import {
   Button,
   Grid,
@@ -7,6 +8,8 @@ import {
   useMediaQuery,
   TextField,
   Hidden,
+  CircularProgress,
+  Snackbar,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -89,6 +92,78 @@ export default function Index() {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailHelper, setEmailHelper] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [alert, setAlert] = useState({
+    open: false,
+    message: "",
+    backgroundColor: "",
+  });
+
+  const handleChange = (e) => {
+    let valid;
+    console.log(e.target.id);
+    switch (e.target.id) {
+      case "email":
+        setEmail(e.target.value);
+
+        valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+          e.target.value
+        );
+
+        if (!valid) {
+          setEmailHelper("Invalid email");
+        } else {
+          setEmailHelper("");
+        }
+
+        if (e.target.value === "") {
+          setEmailHelper("");
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
+  const onConfirm = () => {
+    setLoading(true);
+
+    const url =
+      "https://us-central1-portfolio-d38d2.cloudfunctions.net/sendMail";
+
+    axios
+      .get(url, {
+        params: {
+          name: name,
+          email: email,
+          message: message,
+        },
+      })
+      .then((res) => {
+        setLoading(false);
+        setName("");
+        setEmail("");
+        setMessage("");
+        setAlert({
+          open: true,
+          message: "Message sent!",
+          backgroundColor: "#4BB543",
+        });
+      })
+      .catch((err) => {
+        setLoading(false);
+        setAlert({
+          open: true,
+          message: "Something went wrong, please try again!",
+          backgroundColor: "#FF3232",
+        });
+      });
+  };
 
   return (
     <Grid container className={classes.mainContainer}>
@@ -294,8 +369,8 @@ export default function Index() {
                   label="Name"
                   fullWidth
                   color="primary"
-                  // onChange={}
-                  // value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                   variant="outlined"
                   type="search"
                   autoComplete="off"
@@ -304,11 +379,12 @@ export default function Index() {
               <Grid item className={classes.textInput}>
                 <TextField
                   id="email"
-                  label="Email"
+                  label="Mail"
                   fullWidth
                   color="primary"
-                  // onChange={}
-                  // value={email}
+                  onChange={(e) => handleChange(e)}
+                  error={emailHelper.length !== 0}
+                  value={email}
                   variant="outlined"
                   type="search"
                   autoComplete="off"
@@ -321,9 +397,9 @@ export default function Index() {
                   fullWidth
                   color="primary"
                   multiline
-                  rows={3}
-                  // onChange={}
-                  // value={message}
+                  rows={5}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   variant="outlined"
                   type="search"
                   autoComplete="off"
@@ -335,13 +411,27 @@ export default function Index() {
                   disableElevation
                   color="secondary"
                   className={classes.formButton}
+                  disabled={
+                    name.length === 0 ||
+                    message.length === 0 ||
+                    emailHelper.length !== 0 ||
+                    email.length === 0
+                  }
+                  onClick={onConfirm}
                 >
-                  <Typography
-                    variant="body1"
-                    style={{ color: theme.palette.common.cream }}
-                  >
-                    Send message!
-                  </Typography>
+                  {loading ? (
+                    <CircularProgress
+                      size={30}
+                      color={theme.palette.common.cream}
+                    />
+                  ) : (
+                    <Typography
+                      variant="body1"
+                      style={{ color: theme.palette.common.cream }}
+                    >
+                      Send message!
+                    </Typography>
+                  )}
                 </Button>
               </Grid>
             </form>
@@ -464,8 +554,8 @@ export default function Index() {
                   label="Name"
                   fullWidth
                   color="primary"
-                  // onChange={}
-                  // value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                   variant="outlined"
                   type="search"
                   autoComplete="off"
@@ -474,11 +564,12 @@ export default function Index() {
               <Grid item className={classes.textInput}>
                 <TextField
                   id="email"
-                  label="Email"
+                  label="Mail"
                   fullWidth
                   color="primary"
-                  // onChange={}
-                  // value={email}
+                  onChange={(e) => handleChange(e)}
+                  error={emailHelper.length !== 0}
+                  value={email}
                   variant="outlined"
                   type="search"
                   autoComplete="off"
@@ -491,9 +582,9 @@ export default function Index() {
                   fullWidth
                   color="primary"
                   multiline
-                  rows={3}
-                  // onChange={}
-                  // value={message}
+                  rows={5}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   variant="outlined"
                   type="search"
                   autoComplete="off"
@@ -505,13 +596,27 @@ export default function Index() {
                   disableElevation
                   color="secondary"
                   className={classes.formButton}
+                  disabled={
+                    name.length === 0 ||
+                    message.length === 0 ||
+                    emailHelper.length !== 0 ||
+                    email.length === 0
+                  }
+                  onClick={onConfirm}
                 >
-                  <Typography
-                    variant="body1"
-                    style={{ color: theme.palette.common.cream }}
-                  >
-                    Send message!
-                  </Typography>
+                  {loading ? (
+                    <CircularProgress
+                      size={30}
+                      color={theme.palette.common.cream}
+                    />
+                  ) : (
+                    <Typography
+                      variant="body1"
+                      style={{ color: theme.palette.common.cream }}
+                    >
+                      Send message!
+                    </Typography>
+                  )}
                 </Button>
               </Grid>
             </form>
@@ -551,6 +656,16 @@ export default function Index() {
           </Typography>
         </Grid>
       </Grid>
+      <Snackbar
+        open={alert.open}
+        message={alert.message}
+        ContentProps={{
+          style: { backgroundColor: alert.backgroundColor, fontSize: "1rem" },
+        }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        onClose={() => setAlert({ ...alert, open: false })}
+        autoHideDuration={4000}
+      />
     </Grid>
   );
 }
