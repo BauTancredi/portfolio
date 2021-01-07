@@ -26,9 +26,15 @@ const useStyles = makeStyles((theme) => ({
   },
   logoContainer: {
     fontStyle: "italic",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
   },
   drawerLogoContainer: {
     fontStyle: "italic",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
   },
   logo: {
     fontSize: "3rem",
@@ -46,6 +52,13 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "15px",
   },
   button: {
+    marginLeft: "15px",
+    borderRadius: "15px",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
+  contactButton: {
     marginLeft: "15px",
     borderRadius: "15px",
   },
@@ -94,29 +107,84 @@ const Header = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const tabsOptions = [
-    { name: "Github", id: "aa" },
-    { name: "Recent Works", id: "works" },
-    { name: "About Me", id: "about" },
+    { name: "GITHUB", url: "https://github.com/bautancredi" },
+    { name: "RECENT WORKS", id: "works" },
+    { name: "ABOUT ME", id: "about" },
   ];
 
   const tabs = (
     <Fragment>
-      <Tabs value={false} className={classes.tabContainer}>
-        {tabsOptions.map((route, index) => (
-          <Tab
-            key={`${route}${index}`}
-            className={classes.tab}
-            label={route.name}
-            disableRipple
-            value="0"
-          />
-        ))}
-      </Tabs>
+      <div className={classes.tabContainer}>
+        <Button
+          disableElevation
+          className={classes.button}
+          style={{ textDecoration: "none" }}
+          disableRipple
+          component={Link}
+          href="https://github.com/bautancredi"
+          target="_blank"
+        >
+          <Typography
+            variant="body1"
+            style={{
+              fontFamily: "'Montserrat', 'sans-serif'",
+              fontSize: "1rem",
+              color: theme.palette.common.blue,
+              fontWeight: "400",
+              textDecoration: "none",
+            }}
+          >
+            GITHUB
+          </Typography>
+        </Button>
+        <Button
+          disableElevation
+          className={classes.button}
+          style={{ textDecoration: "none" }}
+          disableRipple
+        >
+          <ReactLink to="works" spy={true} smooth={true}>
+            <Typography
+              variant="body1"
+              style={{
+                fontFamily: "'Montserrat', 'sans-serif'",
+                fontSize: "1rem",
+                color: theme.palette.common.blue,
+                fontWeight: "400",
+                textDecoration: "none",
+              }}
+            >
+              RECENT WORKS
+            </Typography>
+          </ReactLink>
+        </Button>
+        <Button
+          disableElevation
+          className={classes.button}
+          style={{ textDecoration: "none" }}
+          disableRipple
+        >
+          <ReactLink to="about" spy={true} smooth={true}>
+            <Typography
+              variant="body1"
+              style={{
+                fontFamily: "'Montserrat', 'sans-serif'",
+                fontSize: "1rem",
+                color: theme.palette.common.blue,
+                fontWeight: "400",
+                textDecoration: "none",
+              }}
+            >
+              ABOUT ME
+            </Typography>
+          </ReactLink>
+        </Button>
+      </div>
       <Button
         variant="contained"
         color="secondary"
         disableElevation
-        className={classes.button}
+        className={classes.contactButton}
         style={{ textDecoration: "none" }}
       >
         <ReactLink to="contact" spy={true} smooth={true}>
@@ -156,24 +224,50 @@ const Header = () => {
           </ReactLink>
         </Button>
         <List disablePadding>
-          {tabsOptions.map((route, index) => (
-            <ListItem
-              key={index}
-              onClick={() => {
-                setOpenDrawer(false);
-              }}
-              divider
-              button
-              component={Link}
-              href="/"
-              // href={route.link}
-              className={classes.listItem}
-            >
-              <ListItemText disableTypography className={classes.drawerItem}>
-                {route.name}
-              </ListItemText>
-            </ListItem>
-          ))}
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+            }}
+            divider
+            button
+            className={classes.listItem}
+            component={Link}
+            href="https://github.com/bautancredi"
+            target="_blank"
+          >
+            <ListItemText disableTypography className={classes.drawerItem}>
+              GITHUB
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+            }}
+            divider
+            button
+            className={classes.listItem}
+          >
+            <ListItemText disableTypography className={classes.drawerItem}>
+              <ReactLink to="works" spy={true} smooth={true}>
+                RECENT WORKS
+              </ReactLink>
+            </ListItemText>
+          </ListItem>
+          <ListItem
+            onClick={() => {
+              setOpenDrawer(false);
+            }}
+            divider
+            button
+            className={classes.listItem}
+          >
+            <ListItemText disableTypography className={classes.drawerItem}>
+              <ReactLink to="about" spy={true} smooth={true}>
+                ABOUT ME
+              </ReactLink>
+            </ListItemText>
+          </ListItem>
+
           <ListItem
             onClick={() => {
               setOpenDrawer(false);
