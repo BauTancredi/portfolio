@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
 import { Link } from "react-scroll";
-import Head from "next/Head";
+import Head from "next/head";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Button,
