@@ -14,6 +14,14 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          <meta charSet="utf-8" />
+          <link rel="shortcut icon" href="/assets/logo.png" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="https://imgur.com/a/u9fP9G4" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content="Company logo" />
         </Head>
         <body>
           <Main />

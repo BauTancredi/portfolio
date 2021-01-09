@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Head from "next/Head";
 import axios from "axios";
 import {
   Button,
@@ -183,526 +184,544 @@ export default function Index() {
   };
 
   return (
-    <Grid container className={classes.mainContainer}>
-      {/* Hero */}
-      <Grid
-        item
-        container
-        direction="column"
-        alignItems="center"
-        justify="center"
-        className={classes.heroContainer}
-        id="landing"
-      >
-        <Grid item>
-          <Typography
-            variant="h1"
-            style={{ fontSize: matchesSM ? "2.2rem" : undefined }}
-            align="center"
-          >
-            Front-end Developer
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            style={{
-              maxWidth: matchesXS ? "15em" : "30em",
-              fontSize: matchesSM ? "1.5rem" : undefined,
-              marginTop: matchesSM ? "1.5em" : undefined,
-            }}
-            align="center"
-          >
-            Hi, you can call me B. I’m a Front-end Developer with special focus
-            on UI and design.
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          container
-          justify="center"
-          className={classes.buttonsContainer}
-        >
-          <Grid item>
-            <Button
-              variant="outlined"
-              color="secondary"
-              className={classes.button}
-            >
-              <Link to="works" spy={true} smooth={true}>
-                <Typography variant="body1">Recent Works</Typography>
-              </Link>
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              variant="contained"
-              disableElevation
-              color="secondary"
-              className={classes.button}
-            >
-              <Link to="contact" spy={true} smooth={true}>
-                <Typography
-                  variant="body1"
-                  style={{ color: theme.palette.common.cream }}
-                >
-                  Contact Me
-                </Typography>
-              </Link>
-            </Button>
-          </Grid>
-        </Grid>
-      </Grid>
-      {/* Recent Work */}
-      <Grid
-        item
-        container
-        direction="column"
-        alignItems="center"
-        justify="center"
-        className={classes.aboutContainer}
-        id="works"
-      >
-        <Grid item>
-          <Typography
-            variant="h2"
-            align="center"
-            style={{
-              fontSize: matchesSM ? "2.2rem" : undefined,
-              marginTop: "3em",
-            }}
-          >
-            Recent Works
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            align="center"
-            style={{
-              maxWidth: matchesXS ? "15em" : "30em",
-              fontSize: matchesSM ? "1.5rem" : undefined,
-              marginTop: matchesSM ? "1.5em" : undefined,
-            }}
-          >
-            Take a look at some of the projects I’ve recently worked on
-          </Typography>
-        </Grid>
-        <Grid item container style={{ marginTop: "5em", width: "90vw" }}>
-          <Grid item container sm={6} md={4} justify="center">
-            <div className={classes.projectContainer}></div>
-          </Grid>
-          <Grid item container sm={6} md={4} justify="center">
-            <div className={classes.projectContainer}></div>
-          </Grid>
-          <Grid item container sm={6} md={4} justify="center">
-            <div className={classes.projectContainer}></div>
-          </Grid>
-          <Grid item container sm={6} md={4} justify="center">
-            <div className={classes.projectContainer}></div>
-          </Grid>
-          <Grid item container sm={6} md={4} justify="center">
-            <div className={classes.projectContainer}></div>
-          </Grid>
-          <Grid item container sm={6} md={4} justify="center">
-            <div className={classes.projectContainer}></div>
-          </Grid>
-        </Grid>
-      </Grid>
-      {/* About Me */}
-      <Grid
-        item
-        container
-        style={{
-          width: "90vw",
-          margin: "auto",
-          marginTop: matchesSM ? "8em" : "5em",
-        }}
-        direction={matchesMD ? "column" : "row"}
-        id="about"
-      >
+    <Fragment>
+      <Head>
+        <title key="title">Home | Bautista Tancredi</title>
+        <meta
+          name="description"
+          key="description"
+          content="Pristine software custom-designed from the ground up with cutting-edge optimizations. Good UI design + React to ensure a top level web!"
+        />
+        <meta
+          property="og:title"
+          key="og:title"
+          content="Combining UI skills with programming skills for a top level design. | B Development"
+        />
+        <meta property="og:url" key="og:url" content="" />
+        <link rel="canonical" key="canonical" href="" />
+      </Head>
+
+      <Grid container className={classes.mainContainer}>
+        {/* Hero */}
         <Grid
           item
           container
           direction="column"
-          md
-          alignContent={matchesMD ? "center" : undefined}
+          alignItems="center"
+          justify="center"
+          className={classes.heroContainer}
+          id="landing"
+        >
+          <Grid item>
+            <Typography
+              variant="h1"
+              style={{ fontSize: matchesSM ? "2.2rem" : undefined }}
+              align="center"
+            >
+              Front-end Developer
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              style={{
+                maxWidth: matchesXS ? "15em" : "30em",
+                fontSize: matchesSM ? "1.5rem" : undefined,
+                marginTop: matchesSM ? "1.5em" : undefined,
+              }}
+              align="center"
+            >
+              Hi, you can call me B. I’m a Front-end Developer with special
+              focus on UI and design.
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            container
+            justify="center"
+            className={classes.buttonsContainer}
+          >
+            <Grid item>
+              <Button
+                variant="outlined"
+                color="secondary"
+                className={classes.button}
+              >
+                <Link to="works" spy={true} smooth={true}>
+                  <Typography variant="body1">Recent Works</Typography>
+                </Link>
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button
+                variant="contained"
+                disableElevation
+                color="secondary"
+                className={classes.button}
+              >
+                <Link to="contact" spy={true} smooth={true}>
+                  <Typography
+                    variant="body1"
+                    style={{ color: theme.palette.common.cream }}
+                  >
+                    Contact Me
+                  </Typography>
+                </Link>
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+        {/* Recent Work */}
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems="center"
+          justify="center"
+          className={classes.aboutContainer}
+          id="works"
         >
           <Grid item>
             <Typography
               variant="h2"
+              align="center"
               style={{
                 fontSize: matchesSM ? "2.2rem" : undefined,
-                marginBottom: matchesMD ? "1em" : "1.5em",
-                marginTop: "2em",
+                marginTop: "3em",
               }}
-              align={matchesMD ? "center" : undefined}
             >
-              About Me
+              Recent Works
             </Typography>
           </Grid>
           <Grid item>
             <Typography
               variant="body1"
+              align="center"
               style={{
                 maxWidth: matchesXS ? "15em" : "30em",
                 fontSize: matchesSM ? "1.5rem" : undefined,
+                marginTop: matchesSM ? "1.5em" : undefined,
               }}
-              align={matchesMD ? "center" : undefined}
-              paragraph
-              gutterBottom
             >
-              I am passionate about technology. I love designing incredible
-              websites to later bring them to reality.
-            </Typography>
-            <Typography
-              variant="body1"
-              style={{
-                maxWidth: matchesXS ? "15em" : "30em",
-                fontSize: matchesSM ? "1.5rem" : undefined,
-              }}
-              align={matchesMD ? "center" : undefined}
-              paragraph
-              gutterBottom
-            >
-              My toolbox for work consists of the following: Javascript, React,
-              Next.js, Material-UI, Node.js, mongoDB, Firebase and Google
-              Analytics.
+              Take a look at some of the projects I’ve recently worked on
             </Typography>
           </Grid>
+          <Grid item container style={{ marginTop: "5em", width: "90vw" }}>
+            <Grid item container sm={6} md={4} justify="center">
+              <div className={classes.projectContainer}></div>
+            </Grid>
+            <Grid item container sm={6} md={4} justify="center">
+              <div className={classes.projectContainer}></div>
+            </Grid>
+            <Grid item container sm={6} md={4} justify="center">
+              <div className={classes.projectContainer}></div>
+            </Grid>
+            <Grid item container sm={6} md={4} justify="center">
+              <div className={classes.projectContainer}></div>
+            </Grid>
+            <Grid item container sm={6} md={4} justify="center">
+              <div className={classes.projectContainer}></div>
+            </Grid>
+            <Grid item container sm={6} md={4} justify="center">
+              <div className={classes.projectContainer}></div>
+            </Grid>
+          </Grid>
         </Grid>
+        {/* About Me */}
         <Grid
           item
           container
-          md
-          justify={matchesMD ? "center" : "flex-end"}
-          alignItems={matchesLG ? "center" : "flex-start"}
-          style={{ marginTop: matchesMD ? "2em" : "10em" }}
-        >
-          <img
-            src="/assets/monitor.svg"
-            alt="monitor"
-            className={classes.monitor}
-          />
-        </Grid>
-      </Grid>
-      {/* Contact Me */}
-      <Hidden mdDown>
-        <Grid
-          item
-          container
-          style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
+          style={{
+            width: "90vw",
+            margin: "auto",
+            marginTop: matchesSM ? "8em" : "5em",
+          }}
           direction={matchesMD ? "column" : "row"}
-          id="contact"
+          id="about"
         >
-          <Grid item container md className={classes.form}>
-            <form style={{ width: "100%" }}>
-              <Grid item className={classes.textInput}>
-                <TextField
-                  id="nombre"
-                  label="Name"
-                  fullWidth
-                  color="primary"
-                  onChange={(e) => setName(e.target.value)}
-                  value={name}
-                  variant="outlined"
-                  type="search"
-                  autoComplete="off"
-                />
-              </Grid>
-              <Grid item className={classes.textInput}>
-                <TextField
-                  id="email"
-                  label="Mail"
-                  fullWidth
-                  color="primary"
-                  onChange={(e) => handleChange(e)}
-                  error={emailHelper.length !== 0}
-                  value={email}
-                  variant="outlined"
-                  type="search"
-                  autoComplete="off"
-                />
-              </Grid>
-              <Grid item className={classes.textInput}>
-                <TextField
-                  id="message"
-                  label="Message"
-                  fullWidth
-                  color="primary"
-                  multiline
-                  rows={5}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  variant="outlined"
-                  type="search"
-                  autoComplete="off"
-                />
-              </Grid>
-              <Grid item container justify="center">
-                <Button
-                  variant="contained"
-                  disableElevation
-                  color="secondary"
-                  className={classes.formButton}
-                  disabled={
-                    name.length === 0 ||
-                    message.length === 0 ||
-                    emailHelper.length !== 0 ||
-                    email.length === 0
-                  }
-                  onClick={onConfirm}
-                >
-                  {loading ? (
-                    <CircularProgress
-                      size={30}
-                      color={theme.palette.common.cream}
-                    />
-                  ) : (
-                    <Typography
-                      variant="body1"
-                      style={{ color: theme.palette.common.cream }}
-                    >
-                      Send message!
-                    </Typography>
-                  )}
-                </Button>
-              </Grid>
-            </form>
-          </Grid>
           <Grid
             item
             container
             direction="column"
             md
             alignContent={matchesMD ? "center" : undefined}
-            alignItems="flex-end"
-            style={{ paddingRight: matchesLG ? "5em" : "10em" }}
           >
             <Grid item>
               <Typography
                 variant="h2"
                 style={{
                   fontSize: matchesSM ? "2.2rem" : undefined,
-                  marginBottom: matchesMD ? 0 : "1.5em",
+                  marginBottom: matchesMD ? "1em" : "1.5em",
                   marginTop: "2em",
                 }}
-                align={matchesMD ? "center" : "right"}
+                align={matchesMD ? "center" : undefined}
               >
-                Let's get in touch!
+                About Me
               </Typography>
             </Grid>
             <Grid item>
               <Typography
                 variant="body1"
                 style={{
-                  maxWidth: matchesXS ? "15em" : "20em",
+                  maxWidth: matchesXS ? "15em" : "30em",
                   fontSize: matchesSM ? "1.5rem" : undefined,
-                  marginTop: matchesSM ? "1.5em" : undefined,
                 }}
-                align={matchesMD ? "center" : "right"}
+                align={matchesMD ? "center" : undefined}
                 paragraph
                 gutterBottom
               >
-                Ready to bring your idea to life? Tell me about your project and
-                I will help you make it come true.
+                I am passionate about technology. I love designing incredible
+                websites to later bring them to reality.
               </Typography>
               <Typography
                 variant="body1"
                 style={{
-                  maxWidth: matchesXS ? "15em" : "20em",
+                  maxWidth: matchesXS ? "15em" : "30em",
                   fontSize: matchesSM ? "1.5rem" : undefined,
                 }}
-                align={matchesMD ? "center" : "right"}
+                align={matchesMD ? "center" : undefined}
                 paragraph
                 gutterBottom
               >
-                Whether you've developed the whole idea or just glimpsed it,
-                tell me what it's about!
+                My toolbox for work consists of the following: Javascript,
+                React, Next.js, Material-UI, Node.js, mongoDB, Firebase and
+                Google Analytics.
               </Typography>
             </Grid>
           </Grid>
-        </Grid>
-      </Hidden>
-      <Hidden lgUp>
-        <Grid
-          item
-          container
-          style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
-          direction="column"
-          id="contact"
-        >
           <Grid
             item
             container
-            direction="column"
             md
-            alignContent="center"
-            alignItems="center"
+            justify={matchesMD ? "center" : "flex-end"}
+            alignItems={matchesLG ? "center" : "flex-start"}
+            style={{ marginTop: matchesMD ? "2em" : "10em" }}
           >
-            <Grid item>
-              <Typography
-                variant="h2"
-                style={{
-                  fontSize: matchesSM ? "2.2rem" : undefined,
-                  marginBottom: "1em",
-                  marginTop: "3em",
-                }}
-                align="center"
-              >
-                Let's get in touch!
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="body1"
-                style={{
-                  maxWidth: matchesXS ? "15em" : "30em",
-                  fontSize: matchesSM ? "1.5rem" : undefined,
-                  marginTop: matchesSM ? "1.5em" : undefined,
-                }}
-                align="center"
-                paragraph
-                gutterBottom
-              >
-                Ready to bring your idea to life? Tell me about your project and
-                I will help you make it come true.
-              </Typography>
-              <Typography
-                variant="body1"
-                style={{
-                  maxWidth: matchesXS ? "15em" : "30em",
-                  fontSize: matchesSM ? "1.5rem" : undefined,
-                }}
-                align={matchesMD ? "center" : "right"}
-                paragraph
-                gutterBottom
-              >
-                Whether you've developed the whole idea or just glimpsed it,
-                tell me what it's about!
-              </Typography>
-            </Grid>
+            <img
+              src="/assets/monitor.svg"
+              alt="monitor"
+              className={classes.monitor}
+            />
           </Grid>
-          <Grid item container md className={classes.form}>
-            <form style={{ width: "100%" }}>
-              <Grid item className={classes.textInput}>
-                <TextField
-                  id="nombre"
-                  label="Name"
-                  fullWidth
-                  color="primary"
-                  onChange={(e) => setName(e.target.value)}
-                  value={name}
-                  variant="outlined"
-                  type="search"
-                  autoComplete="off"
-                />
-              </Grid>
-              <Grid item className={classes.textInput}>
-                <TextField
-                  id="email"
-                  label="Mail"
-                  fullWidth
-                  color="primary"
-                  onChange={(e) => handleChange(e)}
-                  error={emailHelper.length !== 0}
-                  value={email}
-                  variant="outlined"
-                  type="search"
-                  autoComplete="off"
-                />
-              </Grid>
-              <Grid item className={classes.textInput}>
-                <TextField
-                  id="message"
-                  label="Message"
-                  fullWidth
-                  color="primary"
-                  multiline
-                  rows={5}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  variant="outlined"
-                  type="search"
-                  autoComplete="off"
-                />
-              </Grid>
-              <Grid item container justify="center">
-                <Button
-                  variant="contained"
-                  disableElevation
-                  color="secondary"
-                  className={classes.formButton}
-                  disabled={
-                    name.length === 0 ||
-                    message.length === 0 ||
-                    emailHelper.length !== 0 ||
-                    email.length === 0
-                  }
-                  onClick={onConfirm}
+        </Grid>
+        {/* Contact Me */}
+        <Hidden mdDown>
+          <Grid
+            item
+            container
+            style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
+            direction={matchesMD ? "column" : "row"}
+            id="contact"
+          >
+            <Grid item container md className={classes.form}>
+              <form style={{ width: "100%" }}>
+                <Grid item className={classes.textInput}>
+                  <TextField
+                    id="nombre"
+                    label="Name"
+                    fullWidth
+                    color="primary"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    variant="outlined"
+                    type="search"
+                    autoComplete="off"
+                  />
+                </Grid>
+                <Grid item className={classes.textInput}>
+                  <TextField
+                    id="email"
+                    label="Mail"
+                    fullWidth
+                    color="primary"
+                    onChange={(e) => handleChange(e)}
+                    error={emailHelper.length !== 0}
+                    value={email}
+                    variant="outlined"
+                    type="search"
+                    autoComplete="off"
+                  />
+                </Grid>
+                <Grid item className={classes.textInput}>
+                  <TextField
+                    id="message"
+                    label="Message"
+                    fullWidth
+                    color="primary"
+                    multiline
+                    rows={5}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    variant="outlined"
+                    type="search"
+                    autoComplete="off"
+                  />
+                </Grid>
+                <Grid item container justify="center">
+                  <Button
+                    variant="contained"
+                    disableElevation
+                    color="secondary"
+                    className={classes.formButton}
+                    disabled={
+                      name.length === 0 ||
+                      message.length === 0 ||
+                      emailHelper.length !== 0 ||
+                      email.length === 0
+                    }
+                    onClick={onConfirm}
+                  >
+                    {loading ? (
+                      <CircularProgress
+                        size={30}
+                        color={theme.palette.common.cream}
+                      />
+                    ) : (
+                      <Typography
+                        variant="body1"
+                        style={{ color: theme.palette.common.cream }}
+                      >
+                        Send message!
+                      </Typography>
+                    )}
+                  </Button>
+                </Grid>
+              </form>
+            </Grid>
+            <Grid
+              item
+              container
+              direction="column"
+              md
+              alignContent={matchesMD ? "center" : undefined}
+              alignItems="flex-end"
+              style={{ paddingRight: matchesLG ? "5em" : "10em" }}
+            >
+              <Grid item>
+                <Typography
+                  variant="h2"
+                  style={{
+                    fontSize: matchesSM ? "2.2rem" : undefined,
+                    marginBottom: matchesMD ? 0 : "1.5em",
+                    marginTop: "2em",
+                  }}
+                  align={matchesMD ? "center" : "right"}
                 >
-                  {loading ? (
-                    <CircularProgress
-                      size={30}
-                      color={theme.palette.common.cream}
-                    />
-                  ) : (
-                    <Typography
-                      variant="body1"
-                      style={{ color: theme.palette.common.cream }}
-                    >
-                      Send message!
-                    </Typography>
-                  )}
-                </Button>
+                  Let's get in touch!
+                </Typography>
               </Grid>
-            </form>
+              <Grid item>
+                <Typography
+                  variant="body1"
+                  style={{
+                    maxWidth: matchesXS ? "15em" : "20em",
+                    fontSize: matchesSM ? "1.5rem" : undefined,
+                    marginTop: matchesSM ? "1.5em" : undefined,
+                  }}
+                  align={matchesMD ? "center" : "right"}
+                  paragraph
+                  gutterBottom
+                >
+                  Ready to bring your idea to life? Tell me about your project
+                  and I will help you make it come true.
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    maxWidth: matchesXS ? "15em" : "20em",
+                    fontSize: matchesSM ? "1.5rem" : undefined,
+                  }}
+                  align={matchesMD ? "center" : "right"}
+                  paragraph
+                  gutterBottom
+                >
+                  Whether you've developed the whole idea or just glimpsed it,
+                  tell me what it's about!
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Hidden>
+        <Hidden lgUp>
+          <Grid
+            item
+            container
+            style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
+            direction="column"
+            id="contact"
+          >
+            <Grid
+              item
+              container
+              direction="column"
+              md
+              alignContent="center"
+              alignItems="center"
+            >
+              <Grid item>
+                <Typography
+                  variant="h2"
+                  style={{
+                    fontSize: matchesSM ? "2.2rem" : undefined,
+                    marginBottom: "1em",
+                    marginTop: "3em",
+                  }}
+                  align="center"
+                >
+                  Let's get in touch!
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body1"
+                  style={{
+                    maxWidth: matchesXS ? "15em" : "30em",
+                    fontSize: matchesSM ? "1.5rem" : undefined,
+                    marginTop: matchesSM ? "1.5em" : undefined,
+                  }}
+                  align="center"
+                  paragraph
+                  gutterBottom
+                >
+                  Ready to bring your idea to life? Tell me about your project
+                  and I will help you make it come true.
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    maxWidth: matchesXS ? "15em" : "30em",
+                    fontSize: matchesSM ? "1.5rem" : undefined,
+                  }}
+                  align={matchesMD ? "center" : "right"}
+                  paragraph
+                  gutterBottom
+                >
+                  Whether you've developed the whole idea or just glimpsed it,
+                  tell me what it's about!
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item container md className={classes.form}>
+              <form style={{ width: "100%" }}>
+                <Grid item className={classes.textInput}>
+                  <TextField
+                    id="nombre"
+                    label="Name"
+                    fullWidth
+                    color="primary"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    variant="outlined"
+                    type="search"
+                    autoComplete="off"
+                  />
+                </Grid>
+                <Grid item className={classes.textInput}>
+                  <TextField
+                    id="email"
+                    label="Mail"
+                    fullWidth
+                    color="primary"
+                    onChange={(e) => handleChange(e)}
+                    error={emailHelper.length !== 0}
+                    value={email}
+                    variant="outlined"
+                    type="search"
+                    autoComplete="off"
+                  />
+                </Grid>
+                <Grid item className={classes.textInput}>
+                  <TextField
+                    id="message"
+                    label="Message"
+                    fullWidth
+                    color="primary"
+                    multiline
+                    rows={5}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    variant="outlined"
+                    type="search"
+                    autoComplete="off"
+                  />
+                </Grid>
+                <Grid item container justify="center">
+                  <Button
+                    variant="contained"
+                    disableElevation
+                    color="secondary"
+                    className={classes.formButton}
+                    disabled={
+                      name.length === 0 ||
+                      message.length === 0 ||
+                      emailHelper.length !== 0 ||
+                      email.length === 0
+                    }
+                    onClick={onConfirm}
+                  >
+                    {loading ? (
+                      <CircularProgress
+                        size={30}
+                        color={theme.palette.common.cream}
+                      />
+                    ) : (
+                      <Typography
+                        variant="body1"
+                        style={{ color: theme.palette.common.cream }}
+                      >
+                        Send message!
+                      </Typography>
+                    )}
+                  </Button>
+                </Grid>
+              </form>
+            </Grid>
+          </Grid>
+        </Hidden>
+        {/* Footer */}
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems="center"
+          style={{ marginTop: "10em" }}
+        >
+          <Grid item>
+            <Typography
+              variant="body1"
+              style={{
+                fontSize: matchesSM ? "1.5rem" : undefined,
+              }}
+              align="center"
+              paragraph
+              gutterBottom
+            >
+              Designed By Bautista Tancredi
+            </Typography>
+            <Typography
+              variant="body1"
+              style={{
+                fontSize: matchesSM ? "1.5rem" : undefined,
+              }}
+              align="center"
+              paragraph
+              gutterBottom
+            >
+              Copyright 2021 &#169;
+            </Typography>
           </Grid>
         </Grid>
-      </Hidden>
-      {/* Footer */}
-      <Grid
-        item
-        container
-        direction="column"
-        alignItems="center"
-        style={{ marginTop: "10em" }}
-      >
-        <Grid item>
-          <Typography
-            variant="body1"
-            style={{
-              fontSize: matchesSM ? "1.5rem" : undefined,
-            }}
-            align="center"
-            paragraph
-            gutterBottom
-          >
-            Designed By Bautista Tancredi
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{
-              fontSize: matchesSM ? "1.5rem" : undefined,
-            }}
-            align="center"
-            paragraph
-            gutterBottom
-          >
-            Copyright 2021 &#169;
-          </Typography>
-        </Grid>
+        <Snackbar
+          open={alert.open}
+          message={alert.message}
+          ContentProps={{
+            style: { backgroundColor: alert.backgroundColor, fontSize: "1rem" },
+          }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+          onClose={() => setAlert({ ...alert, open: false })}
+          autoHideDuration={4000}
+        />
       </Grid>
-      <Snackbar
-        open={alert.open}
-        message={alert.message}
-        ContentProps={{
-          style: { backgroundColor: alert.backgroundColor, fontSize: "1rem" },
-        }}
-        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-        onClose={() => setAlert({ ...alert, open: false })}
-        autoHideDuration={4000}
-      />
-    </Grid>
+    </Fragment>
   );
 }
