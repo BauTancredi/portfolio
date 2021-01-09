@@ -35,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
     margin: "1em",
     borderRadius: "15px",
     width: "20em",
+    transform: "scale(1)",
+    transition: "transform 330ms ease-in-out",
+    "&:hover": {
+      transform: "scale(1.1)",
+      transition: "transform 330ms ease-in-out",
+    },
   },
   projectContainer: {
     width: "30em",
@@ -86,6 +92,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     width: "18em",
     marginTop: "3em",
+    transform: "scale(1)",
+    transition: "transform 330ms ease-in-out",
+    "&:hover": {
+      transform: "scale(1.1)",
+      transition: "transform 330ms ease-in-out",
+    },
   },
 }));
 
@@ -365,7 +377,7 @@ export default function Index() {
           md
           justify={matchesMD ? "center" : "flex-end"}
           alignItems={matchesLG ? "center" : "flex-start"}
-          style={{ marginTop: matchesMD ? "2em" : "3em" }}
+          style={{ marginTop: matchesMD ? "2em" : "10em" }}
         >
           <img
             src="/assets/monitor.svg"
