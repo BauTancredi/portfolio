@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Head from "next/Head";
 import axios from "axios";
+import { Link } from "react-scroll";
+import Head from "next/Head";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Button,
   Grid,
@@ -12,7 +13,6 @@ import {
   CircularProgress,
   Snackbar,
 } from "@material-ui/core";
-import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {

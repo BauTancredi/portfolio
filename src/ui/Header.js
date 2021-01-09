@@ -1,5 +1,8 @@
 import React, { Fragment, useState } from "react";
+import { Link as ReactLink } from "react-scroll";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
+import MenuIcon from "@material-ui/icons/Menu";
+import Link from "../Link";
 import {
   Button,
   AppBar,
@@ -7,17 +10,12 @@ import {
   Hidden,
   useScrollTrigger,
   Typography,
-  Tabs,
-  Tab,
   SwipeableDrawer,
   List,
   ListItem,
   ListItemText,
   IconButton,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import Link from "../Link";
-import { Link as ReactLink } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
@@ -115,12 +113,6 @@ const Header = () => {
 
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const [openDrawer, setOpenDrawer] = useState(false);
-
-  const tabsOptions = [
-    { name: "GITHUB", url: "https://github.com/bautancredi" },
-    { name: "RECENT WORKS", id: "works" },
-    { name: "ABOUT ME", id: "about" },
-  ];
 
   const tabs = (
     <Fragment>
