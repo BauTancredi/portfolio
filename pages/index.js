@@ -46,7 +46,10 @@ const useStyles = makeStyles((theme) => ({
   projectContainer: {
     width: "30em",
     height: "20em",
-    backgroundColor: "grey",
+    // backgroundColor: "grey",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
     borderRadius: "15px",
     marginBottom: "10em",
     transform: "scale(1)",
@@ -308,22 +311,40 @@ export default function Index() {
           </Grid>
           <Grid item container style={{ marginTop: "5em", width: "90vw" }}>
             <Grid item container sm={6} md={4} justify="center">
-              <div className={classes.projectContainer}></div>
+              <div
+                className={classes.projectContainer}
+                style={{ backgroundImage: "url(/assets/work1.svg)" }}
+              ></div>
             </Grid>
             <Grid item container sm={6} md={4} justify="center">
-              <div className={classes.projectContainer}></div>
+              <div
+                className={classes.projectContainer}
+                style={{ backgroundImage: "url(/assets/work2.svg)" }}
+              ></div>
             </Grid>
             <Grid item container sm={6} md={4} justify="center">
-              <div className={classes.projectContainer}></div>
+              <div
+                className={classes.projectContainer}
+                style={{ backgroundImage: "url(/assets/work3.svg)" }}
+              ></div>
             </Grid>
             <Grid item container sm={6} md={4} justify="center">
-              <div className={classes.projectContainer}></div>
+              <div
+                className={classes.projectContainer}
+                style={{ backgroundImage: "url(/assets/work4.svg)" }}
+              ></div>
             </Grid>
             <Grid item container sm={6} md={4} justify="center">
-              <div className={classes.projectContainer}></div>
+              <div
+                className={classes.projectContainer}
+                style={{ backgroundImage: "url(/assets/work5.svg)" }}
+              ></div>
             </Grid>
             <Grid item container sm={6} md={4} justify="center">
-              <div className={classes.projectContainer}></div>
+              <div
+                className={classes.projectContainer}
+                style={{ backgroundImage: "url(/assets/work6.svg)" }}
+              ></div>
             </Grid>
           </Grid>
         </Grid>
