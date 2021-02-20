@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
+import Lottie from "react-lottie";
 import { Link } from "react-scroll";
 import Head from "next/head";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -13,6 +14,8 @@ import {
   CircularProgress,
   Snackbar,
 } from "@material-ui/core";
+
+import animationData from "../src/animations/computerAnimation/data";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -69,8 +72,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   monitor: {
-    width: "70%",
-    height: "70%",
+    width: "50%",
+    height: "50%",
     [theme.breakpoints.down("md")]: {
       width: "30%",
       height: "30%",
@@ -109,6 +112,7 @@ export default function Index() {
   const classes = useStyles();
   const theme = useTheme();
 
+  const matchesXL = useMediaQuery(theme.breakpoints.up("xl"));
   const matchesLG = useMediaQuery(theme.breakpoints.down("lg"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
@@ -124,6 +128,15 @@ export default function Index() {
     message: "",
     backgroundColor: "",
   });
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const handleChange = (e) => {
     let valid;
@@ -416,13 +429,10 @@ export default function Index() {
             md
             justify={matchesMD ? "center" : "flex-end"}
             alignItems={matchesLG ? "center" : "flex-start"}
-            style={{ marginTop: matchesMD ? "2em" : "10em" }}
+            style={{ marginTop: matchesMD ? "2em" : '5em' }}
           >
-            <img
-              src="/assets/monitor.svg"
-              alt="monitor"
-              className={classes.monitor}
-            />
+          <Lottie options={defaultOptions} width={matchesXL ? '50%' : !matchesMD ? '80%' : '55%'} style={{margin: '0 5px 0 0'}}/>
+          {console.log(matchesXL)}
           </Grid>
         </Grid>
         {/* Contact Me */}
@@ -567,7 +577,7 @@ export default function Index() {
           <Grid
             item
             container
-            style={{ width: "90vw", margin: "auto", marginTop: "5em" }}
+            style={{ width: "90vw", margin: "auto", marginTop: "2em" }}
             direction="column"
             id="contact"
           >
