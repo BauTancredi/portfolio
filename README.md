@@ -1,32 +1,14 @@
-# Next.js example
+![Logo](public/assets/logo.svg)
 
--ARQ & TECK
--Monterrozzo
--Mantiten
--Arc Develompent
--Node Send
--Gatsby DatoCMS Hotel 
+This is Bautista's Tancredi portfolio. It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## How to use
+## Getting Started
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+First, run the development server:
 
-```sh
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
 ```
-
-Install it and run:
-
-```sh
-npm install
+bash
 npm run dev
+# or
+yarn dev
 ```
-
-or:
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui-org/material-ui/tree/master/examples/nextjs)
-
-## The idea behind the example
-
-[Next.js](https://github.com/zeit/next.js) is a framework for server-rendered React apps.
