@@ -140,7 +140,6 @@ export default function Index() {
 
   const handleChange = (e) => {
     let valid;
-    console.log(e.target.id);
     switch (e.target.id) {
       case "email":
         setEmail(e.target.value);
@@ -432,7 +431,6 @@ export default function Index() {
             style={{ marginTop: matchesMD ? "2em" : '5em' }}
           >
           <Lottie options={defaultOptions} width={matchesXL ? '50%' : !matchesMD ? '80%' : '55%'} style={{margin: '0 5px 0 0'}}/>
-          {console.log(matchesXL)}
           </Grid>
         </Grid>
         {/* Contact Me */}

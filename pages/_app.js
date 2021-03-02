@@ -7,7 +7,7 @@ import theme from "../src/ui/theme";
 import Fonts from "../src/Fonts";
 import Header from "../src/ui/Header";
 
-// import "../src/css/styles.css";
+import "../src/css/styles.css";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
