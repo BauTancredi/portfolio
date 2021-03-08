@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
 import axios from "axios";
 import Lottie from "react-lottie";
-import { Link } from "react-scroll";
+import { Link as ReactLink } from "react-scroll";
 import Head from "next/head";
+import Link from "../src/Link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Button,
@@ -262,9 +263,9 @@ export default function Index() {
                 color="secondary"
                 className={classes.button}
               >
-                <Link to="works" spy={true} smooth={true}>
+                <ReactLink to="works" spy={true} smooth={true}>
                   <Typography variant="body1">Recent Works</Typography>
-                </Link>
+                </ReactLink>
               </Button>
             </Grid>
             <Grid item>
@@ -274,14 +275,14 @@ export default function Index() {
                 color="secondary"
                 className={classes.button}
               >
-                <Link to="contact" spy={true} smooth={true}>
+                <ReactLink to="contact" spy={true} smooth={true}>
                   <Typography
                     variant="body1"
                     style={{ color: theme.palette.common.cream }}
                   >
                     Contact Me
                   </Typography>
-                </Link>
+                </ReactLink>
               </Button>
             </Grid>
           </Grid>
@@ -322,37 +323,91 @@ export default function Index() {
             </Typography>
           </Grid>
           <Grid item container style={{ marginTop: "5em", width: "90vw" }}>
-            <Grid item container sm={6} md={4} justify="center">
+            <Grid
+              item
+              container
+              sm={6}
+              md={4}
+              justify="center"
+              component={Link}
+              href="https://arqteck.mx/"
+              target="_blank"
+            >
               <div
                 className={classes.projectContainer}
                 style={{ backgroundImage: "url(/assets/work1.svg)" }}
               ></div>
             </Grid>
-            <Grid item container sm={6} md={4} justify="center">
+            <Grid
+              item
+              container
+              sm={6}
+              md={4}
+              justify="center"
+              component={Link}
+              href="https://monterrozzo.vercel.app/"
+              target="_blank"
+            >
               <div
                 className={classes.projectContainer}
                 style={{ backgroundImage: "url(/assets/work2.svg)" }}
               ></div>
             </Grid>
-            <Grid item container sm={6} md={4} justify="center">
+            <Grid
+              item
+              container
+              sm={6}
+              md={4}
+              justify="center"
+              component={Link}
+              href="https://arc-development-react.vercel.app/"
+              target="_blank"
+            >
               <div
                 className={classes.projectContainer}
                 style={{ backgroundImage: "url(/assets/work3.svg)" }}
               ></div>
             </Grid>
-            <Grid item container sm={6} md={4} justify="center">
+            <Grid
+              item
+              container
+              sm={6}
+              md={4}
+              justify="center"
+              component={Link}
+              href="https://suspicious-liskov-a51752.netlify.app"
+              target="_blank"
+            >
               <div
                 className={classes.projectContainer}
                 style={{ backgroundImage: "url(/assets/work4.svg)" }}
               ></div>
             </Grid>
-            <Grid item container sm={6} md={4} justify="center">
+            <Grid
+              item
+              container
+              sm={6}
+              md={4}
+              justify="center"
+              component={Link}
+              href="https://trusting-pare-cbd58e.netlify.app/"
+              target="_blank"
+            >
               <div
                 className={classes.projectContainer}
                 style={{ backgroundImage: "url(/assets/work5.svg)" }}
               ></div>
             </Grid>
-            <Grid item container sm={6} md={4} justify="center">
+            <Grid
+              item
+              container
+              sm={6}
+              md={4}
+              justify="center"
+              component={Link}
+              href="https://cranky-ardinghelli-a2cbbd.netlify.app/"
+              target="_blank"
+            >
               <div
                 className={classes.projectContainer}
                 style={{ backgroundImage: "url(/assets/work6.svg)" }}
@@ -428,9 +483,13 @@ export default function Index() {
             md
             justify={matchesMD ? "center" : "flex-end"}
             alignItems={matchesLG ? "center" : "flex-start"}
-            style={{ marginTop: matchesMD ? "2em" : '5em' }}
+            style={{ marginTop: matchesMD ? "2em" : "5em" }}
           >
-          <Lottie options={defaultOptions} width={matchesXL ? '50%' : !matchesMD ? '80%' : '55%'} style={{margin: '0 5px 0 0'}}/>
+            <Lottie
+              options={defaultOptions}
+              width={matchesXL ? "50%" : !matchesMD ? "80%" : "55%"}
+              style={{ margin: "0 5px 0 0" }}
+            />
           </Grid>
         </Grid>
         {/* Contact Me */}
